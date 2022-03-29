@@ -643,7 +643,7 @@ app.patch("/api/emptywallet", (req, res) => {
 });
 
 app.get("/api/products/:category", (req, res) => {
-  const category = req?.params?.category;
+  const category = req.params.category;
 
   connection.query(
     `SELECT * FROM product WHERE Category='${category}'`,
