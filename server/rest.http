@@ -1,0 +1,13 @@
+GET  http://localhost:3000/
+
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik9tYXIxMjM0NW9tYXIxNUBnbWFpbC5jb20iLCJpYXQiOjE2NDU2MDk0MjIsImV4cCI6MTY0NTg2ODYyMn0.hcMRcGCuL5mSD9Ejh4ra0QeiPMR6d3D5KKgRV8126Hc
+
+###LoginROute
+
+POST http://localhost:3000/login
+
+Content-Type: :application/json
+
+
+
+

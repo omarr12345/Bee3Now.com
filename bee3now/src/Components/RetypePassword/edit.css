@@ -1,0 +1,13 @@
+.w-30 {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-width {
+  width: 150px !important;
+}
+
+.border {
+  border: solid 1px;
+}

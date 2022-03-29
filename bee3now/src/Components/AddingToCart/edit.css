@@ -1,0 +1,52 @@
+@import "react-slideshow-image/dist/styles.css";
+
+.adding-to-cart {
+  margin-top: 100px;
+  margin-bottom: auto;
+  width: 100px;
+}
+
+.btn-success {
+  border-radius: 5px;
+  color: white !important;
+}
+
+.card-body {
+  border: solid 1px #dfdfdf;
+}
+
+.btn-info {
+  border-radius: 5px !important;
+  background-color: rgb(251, 212, 109) !important;
+}
+
+.favourite-icon {
+  color: white;
+}
+
+.img-container {
+  width: 30%;
+  height: 100%;
+}
+
+#add-to-cart {
+  width: 2000px;
+}
+
+.color-white {
+  color: white !important;
+}
+
+.btn-yellow {
+  background-color: rgb(251, 212, 109);
+}
+
+@media (max-width: 320px) and (min-width: 375px) {
+  .p-3 {
+    padding: 0px !important;
+    word-wrap: break-word;
+  }
+  .p-4 {
+    padding: 0px !important;
+  }
+}

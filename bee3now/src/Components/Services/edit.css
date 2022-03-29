@@ -1,0 +1,15 @@
+.icon-color {
+  color: #fbd46e;
+}
+
+.icon-color :hover {
+  transition: all 1s;
+  color: black;
+  cursor: pointer;
+}
+
+.services-border {
+  border: solid 1px #dddddd;
+  height: auto;
+  padding: 15px;
+}

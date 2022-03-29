@@ -1,0 +1,13 @@
+.callus-color {
+  background-color: #fbd46e;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.m-l-5:hover {
+  opacity: 0.7;
+  transition: all 1s;
+}

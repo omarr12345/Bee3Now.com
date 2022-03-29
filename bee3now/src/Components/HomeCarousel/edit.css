@@ -1,0 +1,48 @@
+.carouselItem {
+  width: 100%;
+  height: 300px;
+  justify-content: center;
+}
+
+.carousel {
+  height: 100%;
+  width: 100%;
+  color: black;
+}
+
+.img-fluid {
+  display: block;
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-control-prev-icon {
+  color: black !important;
+}
+.home-carousel {
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.prev {
+  width: 5%;
+}
+
+.carousel-control-prev-icon {
+  color: black;
+}
+
+.carousel-img {
+  height: 100%;
+}
+
+@media (max-width: 425px) {
+  .carouselItem {
+    height: 150px;
+    width: 100%;
+  }
+}

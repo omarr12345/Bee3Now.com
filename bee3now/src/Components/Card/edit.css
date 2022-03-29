@@ -1,0 +1,153 @@
+.card {
+  cursor: pointer;
+  position: relative;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  border: solid 1px #dddddd;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.card-img-top {
+  height: 255px;
+  width: 100%;
+  opacity: 1;
+  border: solid 1px #dddddd;
+  object-fit: cover;
+}
+
+.second-card-img-top {
+  position: absolute;
+  height: 260px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.5s;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card-profit {
+  color: blue;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-price {
+  color: red;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-button {
+  background-color: rgb(235, 233, 235);
+  text-align: right;
+}
+
+.imgquickview {
+  position: absolute;
+  padding: 5px;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+  z-index: 100;
+
+  transition: all 1s;
+}
+
+.card:hover .imgquickview {
+  opacity: 1;
+}
+
+.faShoppingCart {
+  transition: all 5s;
+  color: black;
+}
+.faEye {
+  transition: all 5s;
+  color: black;
+}
+.faShoppingCart :hover {
+  transition: all 1s;
+  color: gold;
+}
+
+.faEye :hover {
+  color: gold;
+  transition: all 1s;
+}
+
+.card-img {
+  position: relative;
+  height: 65%;
+  padding: 5px;
+}
+
+.card-body {
+  border: solid 1px;
+}
+
+.card-details-button {
+  height: 15%;
+  width: 100%;
+  word-wrap: break-word;
+  padding-top: 10px;
+}
+
+.card-details-button a {
+  color: white;
+}
+.card-con {
+  height: 40%;
+}
+
+.card-name {
+  height: 40%;
+}
+
+.card-con p {
+  margin: 2px;
+  padding: 0px;
+  font-size: 15px;
+}
+
+.faHeart {
+  border: solid 1px red;
+}
+
+.add-to-cart-btn {
+  border-radius: 50px;
+  background-color: rgb(251, 212, 109);
+  transition: all 0.2s;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.add-to-cart-btn:hover {
+  background-color: rgb(25, 135, 84);
+}
+
+.favourite:hover {
+  color: #fbd46d;
+}
+
+.padding-top {
+  padding-top: 2px;
+}
+
+.color-white {
+  color: #fbd46d;
+}
+
+.padding-15 {
+  padding: 15px;
+}

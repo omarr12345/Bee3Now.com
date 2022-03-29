@@ -1,0 +1,197 @@
+.logo2 {
+  width: 55px;
+  height: 55px;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+.btn {
+  text-align: center;
+  height: 50%;
+  border: solid 1px gray;
+  background-color: #fbd46d;
+  color: #716044;
+}
+.lineheight {
+  line-height: normal;
+}
+
+.width-200 {
+  width: 300px;
+}
+
+.btn-warning {
+  padding: 10px;
+  color: white;
+  background-color: black;
+}
+
+.product-search-form__input[_ngcontent-mob-c82] {
+  background-color: white;
+  color: #aaa;
+  height: 52px !important;
+  width: 100%;
+  padding: 0 1.3888888889em 0 3.3333333333em;
+  font-size: 1.125em;
+  border: solid 2px;
+}
+
+.search-form {
+  width: 600px;
+  padding-top: 22px;
+  padding-bottom: 5px;
+  height: 70px;
+  position: relative;
+}
+
+.icons-container {
+  padding: 16px;
+  cursor: pointer;
+}
+
+.search-icon {
+  color: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  text-align: center;
+  height: 50px !important;
+  border-radius: 5px;
+  padding: 12px;
+  background-color: black;
+  margin-top: 1px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: "segoe ui";
+}
+
+.nav {
+  background-color: #fbd46d;
+  font-weight: bold;
+  height: 90px;
+  width: 100%;
+  position: fixed;
+  z-index: 1000000000000000;
+  top: 0;
+  left: 0;
+}
+
+.navbar {
+  padding-top: 0px !important;
+}
+
+.container-fluid {
+  height: 70px !important;
+}
+
+.nav-link {
+  padding: 0px !important;
+}
+
+.icons {
+  width: 50%;
+  padding: 32px;
+}
+
+#search-menu {
+  width: 447px;
+  height: 300px;
+  background-color: white;
+  position: absolute;
+  top: 73px;
+  left: 4px;
+  display: none;
+  overflow: scroll;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.search-imgs {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.search-output {
+  height: 100px;
+  border: solid 1px rgb(224, 224, 224);
+  direction: ltr !important;
+  cursor: pointer;
+  padding: 10px;
+}
+
+#search-menu::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+#search-menu::-webkit-scrollbar-track {
+  background: rgb(224, 224, 224);
+}
+
+/* Handle */
+#search-menu::-webkit-scrollbar-thumb {
+  background: rgb(224, 224, 224);
+}
+
+/* Handle on hover */
+#search-menu::-webkit-scrollbar-thumb:hover {
+  background: rgb(224, 224, 224);
+}
+
+.fa-search {
+  color: white;
+}
+
+@media only screen and (max-width: 424px) and (min-width: 10px) {
+  .search-form {
+    overflow: hidden;
+  }
+
+  #navbarScroll {
+    width: 100%;
+  }
+
+  .me-auto {
+    background-color: rgb(251, 212, 109);
+    width: 100%;
+  }
+  .product-search-form__input {
+    display: none;
+  }
+  .search-form {
+    padding-top: 0px;
+  }
+  .icons {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 425px) {
+  .search-form {
+    overflow: hidden;
+  }
+
+  #navbarScroll {
+    width: 100%;
+  }
+
+  .me-auto {
+    background-color: rgb(251, 212, 109);
+  }
+  .product-search-form__input {
+    display: none;
+  }
+  .search-form {
+    padding-top: 0px;
+  }
+
+  .icons {
+    width: 100%;
+  }
+  Form {
+    overflow: hidden;
+  }
+}

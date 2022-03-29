@@ -1,0 +1,33 @@
+.completing-orders {
+  margin-top: 80px;
+  border: solid 1px rgb(224, 224, 224);
+  padding: 50px;
+}
+
+.form-control {
+  border-radius: 5px;
+  padding: 10px !important;
+}
+
+.form-style {
+  text-align: right !important;
+}
+
+.outline {
+  margin-top: 30px;
+}
+@media (max-width: 320px) {
+  .form-style {
+    width: 100% !important;
+    border: solid 1px darkgray;
+    border-radius: 10px;
+  }
+
+  .form-control {
+    height: 40px;
+  }
+
+  .completing-orders {
+    padding: 10px;
+  }
+}

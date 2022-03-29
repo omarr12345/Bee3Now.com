@@ -1,0 +1,44 @@
+.add-product-form {
+  border: solid 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  direction: ltr;
+  padding: 5px;
+  text-align: center;
+}
+
+.form-text-input {
+  width: 100%;
+  padding: 10px;
+}
+
+.add-product-form button {
+  font-weight: bold;
+}
+.orders-container {
+  margin-top: 100px;
+}
+
+.order {
+  border: solid 1px;
+  height: 600px;
+  box-sizing: border-box;
+}
+.border-solid-1-black {
+  border: solid 1px rgb(224, 224, 224);
+}
+
+.option {
+  width: 100px;
+  border-radius: 5px !important;
+}
+
+.true-icon {
+  color: green;
+}
+
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}

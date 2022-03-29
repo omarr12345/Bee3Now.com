@@ -1,0 +1,48 @@
+.padding {
+  margin-top: 300px;
+}
+
+.authorizes {
+  margin: 1rem 0;
+  background-color: #fff;
+  border: solid 1px rgb(221, 221, 221);
+  color: rgb(206, 185, 173);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.authorizes > div {
+  padding: 1rem;
+}
+
+.choices {
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 100%;
+  color: black !important;
+  font-family: "Tajawal", sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.choices:hover {
+  color: black !important;
+  text-decoration: none;
+}
+
+.content {
+  margin: 1rem 0;
+  background-color: #fff;
+  border: solid 1px rgb(221, 221, 221);
+}
+
+.side-bar {
+  text-decoration: none !important;
+}
+
+.container-w {
+  width: 1000px;
+}
+
+@media (max-width: 425px) {
+}

@@ -1,0 +1,19 @@
+.names {
+  width: 200px !important;
+}
+
+.email {
+  width: 400px !important;
+}
+
+.personal-details {
+  padding: 20px;
+}
+
+.mobile-number {
+  width: 400px !important;
+}
+
+.form-edit {
+  height: 35px !important;
+}
