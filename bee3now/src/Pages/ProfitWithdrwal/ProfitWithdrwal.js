@@ -23,7 +23,7 @@ function ProfitWithdrwal() {
 
     axios
       .post(
-        Process.env.REACT_APP_API_URL + "/profitwithdrawalemail",
+        process.env.REACT_APP_API_URL + "/profitwithdrawalemail",
         {
           TransferNumber: transferNumber,
           TransferWay: TransferMethod[way],
