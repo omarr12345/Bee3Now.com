@@ -33,7 +33,7 @@ var adminAddProductsApi = "/api/admin/addproduct";
 
 //Database Connection
 var connection = mysql.createConnection({
-  host: "45.93.137.66",
+  host: "127.0.0.1",
   user: "root",
   password: "",
   database: "Product",
@@ -399,7 +399,9 @@ app.post("/api/forgotpassword", async (req, res) => {
             text: "Click Link to Change Password",
 
             html:
-              '<p>Click <a href="http://localhost:3000/retypepassword/' +
+              '<p>Click <a href="' +
+              process.env.REACT_APP_API_URL +
+              "/retypepassword/" +
               token +
               '">here</a> to reset your password</p>',
           };
@@ -571,7 +573,8 @@ app.post("/api/profitwithdrawalemail", authenticate, (req, res) => {
       }
 
       const token = createToken(result[0].Id);
-      var href = "http://localhost:3000/withdrawalconfirmation/" + token + "";
+      var href =
+        process.env.REACT_APP_API_URL + "/withdrawalconfirmation/" + token + "";
       res.json(result[0]);
       var mailOptions = {
         from: "bee3now.1@gmail.com",
