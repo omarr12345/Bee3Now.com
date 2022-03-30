@@ -33,9 +33,9 @@ var adminAddProductsApi = "/api/admin/addproduct";
 
 //Database Connection
 var connection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "username",
-  password: "password",
+  host: "45.93.137.66",
+  user: "root",
+  password: "",
   database: "Product",
 });
 
