@@ -42,6 +42,7 @@ var connection = mysql.createConnection({
 connection.connect((error) => {
   if (!!error) {
     console.log("error");
+    throw error;
   } else console.log("connected");
 });
 
