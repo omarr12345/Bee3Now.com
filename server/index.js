@@ -34,8 +34,8 @@ var adminAddProductsApi = "/api/admin/addproduct";
 //Database Connection
 var connection = mysql.createConnection({
   host: "45.93.137.66",
-  user: "username",
-  password: "password",
+  user: "LOAY",
+  password: "LOAY@BEE3NOW.COM",
   database: "Product",
 });
 
