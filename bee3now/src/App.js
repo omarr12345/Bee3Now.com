@@ -2,15 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HomeNavbar from "./Components/Navbar/Navbar";
 import ProfilePage from "./Components/ProfilePage/ProfilePage";
-import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
-import {
-  Router,
-  Route,
-  Routes,
-  BrowserRouter,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import HomePage from "./Components/HomePage/HomePage";
 import Cart from "./Components/Cart/Cart";
 import React from "react";
