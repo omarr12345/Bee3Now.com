@@ -44,7 +44,7 @@ class Cart extends React.Component {
           </div>
           <div className="text-center">
             <Link
-              disabled="true"
+              disabled
               className=" text-center p-2 btn-success text-center"
               id="buy"
               to={"/completingorder"}

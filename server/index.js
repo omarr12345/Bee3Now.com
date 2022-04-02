@@ -1,3 +1,6 @@
+require("dotenv").config();
+
+const { DB_CONFIG } = require("./Config");
 var cookieParser = require("cookie-parser");
 var express = require("express");
 var mysql = require("mysql");
@@ -32,12 +35,7 @@ var walletsAndBagsApi = "/api/walletsandbags";
 var adminAddProductsApi = "/api/admin/addproduct";
 
 //Database Connection
-var connection = mysql.createConnection({
-  host: "45.93.137.66",
-  user: "LOAY",
-  password: "LOAY@BEE3NOW.COM",
-  database: "Product",
-});
+var connection = mysql.createConnection(DB_CONFIG);
 
 connection.connect((error) => {
   if (!!error) {

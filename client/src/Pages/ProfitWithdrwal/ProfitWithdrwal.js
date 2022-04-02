@@ -39,7 +39,7 @@ function ProfitWithdrwal() {
 
     axios
       .patch(
-        "http://localhost:3001/api/emptywallet",
+        `${process.env.REACT_APP_API_URL}/emptywallet`,
         {
           Wallet: 0,
         },

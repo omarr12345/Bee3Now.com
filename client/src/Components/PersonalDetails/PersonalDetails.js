@@ -111,7 +111,7 @@ function PersonalDetails() {
     if (validatePass()) {
       await axios
         .patch(
-          "http://localhost:3001/api/updatepassword",
+          `${process.env.REACT_APP_API_URL}/updatepassword`,
           {
             Password: pass,
           },

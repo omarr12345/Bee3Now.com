@@ -3,9 +3,9 @@ import axios from "axios";
 export const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
-export const allProductsApi = "http://localhost:3001/api/allproducts";
-const clothesApi = "http://localhost:3001/api/products/clothes";
-const ordersApi = "http://localhost:3001/api/orders";
+export const allProductsApi = `${process.env.REACT_APP_API_URL}/allproducts`;
+const clothesApi = `${process.env.REACT_APP_API_URL}/products/clothes`;
+const ordersApi = `${process.env.REACT_APP_API_URL}/orders`;
 
 const getAllData = async () => {
   return axiosInstance.get("/allproducts", {

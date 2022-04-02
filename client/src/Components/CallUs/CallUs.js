@@ -16,26 +16,14 @@ function CallUs() {
       </div>
 
       <div className="d-flex flex-row ">
-        <Link to="">
-          <FontAwesomeIcon
-            icon={faFacebook}
-            className="fa-2x m-l-5 "
-            to="https://www.facebook.com/groups/bee3official/?ref=share"
-          />
+        <Link to="https://www.facebook.com/groups/bee3official/?ref=share">
+          <FontAwesomeIcon icon={faFacebook} className="fa-2x m-l-5 " />
         </Link>
-        <Link>
-          <FontAwesomeIcon
-            icon={faInstagram}
-            className="fa-2x m-l-5"
-            to="https://www.instagram.com/bee3now8/"
-          />
+        <Link to="https://www.instagram.com/bee3now8/">
+          <FontAwesomeIcon icon={faInstagram} className="fa-2x m-l-5" />
         </Link>
-        <Link>
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            className="fa-2x m-l-5"
-            to="https://www.linkedin.com/in/bee3-now-9a948521a"
-          />{" "}
+        <Link to="https://www.linkedin.com/in/bee3-now-9a948521a">
+          <FontAwesomeIcon icon={faLinkedin} className="fa-2x m-l-5" />
         </Link>
       </div>
 

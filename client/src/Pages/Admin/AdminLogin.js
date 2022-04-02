@@ -31,7 +31,7 @@ function AdminLogin() {
           localStorage.setItem("admin_access_token", response.data.accessToken);
           sessionStorage.setItem("Admin", "true");
           axios
-            .post("http://localhost:3001/admin/dashboard", {
+            .post(`${process.env.REACT_APP_URL}/admin/dashboard`, {
               token: localStorage.getItem("admin_access_token"),
             })
             .then((responseee) => {

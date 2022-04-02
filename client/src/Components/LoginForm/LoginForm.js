@@ -37,7 +37,7 @@ function LoginForm(props) {
           localStorage.setItem("access_token", response.data.accessToken);
           sessionStorage.setItem("Authenticated", "is Authenticated");
           axios
-            .post("http://localhost:3001/", {
+            .post(process.env.REACT_APP_URL, {
               token: localStorage.getItem("access_token"),
             })
             .then((responseee) => {
