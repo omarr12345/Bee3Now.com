@@ -31,11 +31,11 @@ class Cart extends React.Component {
         <div className="row ">
           <div id="empty"></div>
 
-          {this.props.items.map((item) => (
-            <div className="card-w">
+          <div className="row justify-content-between">
+            {this.props.items.map((item) => (
               <CartItem item={item} key={item.Id} />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div>

@@ -15,16 +15,16 @@ function FavouriteItem(props) {
   console.log(product);
 
   return (
-    <div className="carddd">
-      <div className="card-img-container">
-        <img src={product.ImgUrl} alt="..." className="card-img-top" />
+    <div className="col-12 col-md-4 col-lg-3 card " key={product.Id}>
+      <div className="card-img">
+        <img src={product.ImgUrl} alt="اسم المنتج" className="card-img-top" />
       </div>
       <div className="card-body">
         <h5 className="card-title">الاسم:{product.Name}</h5>
         <p className="card-text"> السعر للوحده:{product.Price}</p>
         <p className="card-text"> الربح للوحده:{product.Profit}</p>
 
-        <div className=" p-2 btn-success text-center w-75 ">
+        <div className=" p-2 btn-success text-center col-12 ">
           <Link
             to={`/product/${product.Id}`}
             style={{ textDecoration: "none", color: "white" }}
@@ -37,7 +37,7 @@ function FavouriteItem(props) {
           </Link>
         </div>
         <button
-          className="btn btn-danger  w-75"
+          className="p-2 btn-danger col-12 font-bold "
           onClick={() => props.removeFromFavourites(product)}
         >
           <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon> &nbsp; احذف من

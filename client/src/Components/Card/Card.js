@@ -28,7 +28,7 @@ function Card(props) {
   }, []);
 
   return (
-    <div className="my-2 col-12 col-md-6 col-lg-3 px-1">
+    <div className="my-2 col-6 col-md-4 col-lg-3 px-1">
       <div
         className="card d-flex flex-column h-100 card-contains"
         key={product.Id}
@@ -45,31 +45,32 @@ function Card(props) {
           <div className="card-name ">
             <p>{product.Name}</p>
           </div>
+
           <div className="  w-100 d-flex flex-row  flex-wrap justify-content-between ">
-            <p className="card-price">السعر:{product.Price}جنيه</p>
-            <p className="card-profit">الربح:{product.Profit}جنيه</p>
+            <p className="card-price">{product.Price}جنيه</p>
+            <p className="card-profit">الربح:{product.Profit}</p>
           </div>
         </div>
 
-        <div className="card-details-button d-flex flex-row  justify-content-between ">
-          <div className="py-1 px-3 add-to-cart-btn ">
+        <div className="card-details-button row ">
+          <div className="py-3 add-to-cart-btn col-9 col-md-10">
             <Link
               to={`/product/${product.Id}`}
-              className="text-decoration-none "
+              className="text-decoration-none"
             >
               <FontAwesomeIcon
                 icon={faShoppingCart}
                 className="padding-top"
               ></FontAwesomeIcon>{" "}
-              &nbsp; أضف الي العربه
+              أضف الي العربه
             </Link>
           </div>
 
-          <div className="padding-15 ">
+          <div className="padding-15  col-3 col-md-2">
             <Link to={`/product/${product.Id}`}>
               <FontAwesomeIcon
                 icon={faHeart}
-                className="fa-2x color-white"
+                className="fa-2x color-gold"
               ></FontAwesomeIcon>
             </Link>
           </div>

@@ -5,7 +5,7 @@ import ProfilePage from "./Components/ProfilePage/ProfilePage";
 import { Route, Routes, useLocation } from "react-router-dom";
 import HomePage from "./Components/HomePage/HomePage";
 import Cart from "./Components/Cart/Cart";
-import React from "react";
+import React, { useEffect } from "react";
 
 import WalletsAndBags from "./Pages/WalletsAndBags";
 import LoginForm from "./Components/LoginForm/LoginForm";
@@ -44,6 +44,10 @@ function NoMatch() {
 }
 
 function App() {
+  useEffect(() => {
+    document.title = "Bee3now احدث موقع دروبشيبينج في مصر";
+  });
+
   return (
     <div className="App">
       <HomeNavbar />

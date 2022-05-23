@@ -112,7 +112,7 @@ function BestSelling(props) {
 
   return (
     <div className="container">
-      <h2>الأكثر مبيعا</h2>
+      <h3>الأكثر مبيعا</h3>
       <br />
       <div className="row mx-0">
         {bestSellingProducts.map((item) => {
@@ -122,7 +122,7 @@ function BestSelling(props) {
 
       <br />
 
-      <h2>الملابس</h2>
+      <h3>الملابس</h3>
 
       <br />
 
@@ -133,7 +133,7 @@ function BestSelling(props) {
       </div>
 
       <br />
-      <h2>الساعات</h2>
+      <h3>الساعات</h3>
 
       <br />
 
@@ -145,7 +145,7 @@ function BestSelling(props) {
 
       <br />
 
-      <h2>الأدوات المنزليه</h2>
+      <h3>الأدوات المنزليه</h3>
 
       <br />
 
@@ -157,7 +157,7 @@ function BestSelling(props) {
 
       <br />
 
-      <h2> مكن حلاقه</h2>
+      <h3> مكن حلاقه</h3>
 
       <br />
 
@@ -169,7 +169,7 @@ function BestSelling(props) {
 
       <br />
 
-      <h2>مستحضرات تجميل</h2>
+      <h3>مستحضرات تجميل</h3>
 
       <br />
 
@@ -181,7 +181,7 @@ function BestSelling(props) {
 
       <br />
 
-      <h2>أدوات كهربائيه </h2>
+      <h3>أدوات كهربائيه </h3>
 
       <br />
 
@@ -193,7 +193,7 @@ function BestSelling(props) {
 
       <br />
 
-      <h2>شنط </h2>
+      <h3>شنط </h3>
 
       <br />
 
@@ -205,7 +205,7 @@ function BestSelling(props) {
 
       <br />
 
-      <h2> محافظ</h2>
+      <h3> محافظ</h3>
 
       <br />
 
@@ -217,7 +217,7 @@ function BestSelling(props) {
 
       <br />
 
-      <h2>اكسسوارات موبايل </h2>
+      <h3>اكسسوارات موبايل </h3>
 
       <br />
 

@@ -116,9 +116,9 @@ function AddingToCart(props) {
 
   return (
     <div className="adding-to-cart">
-      <div className="container">
-        <div className="d-flex flex-row justify-content-center ">
-          <div className="img-container">
+      <div className="container ">
+        <div className="row ">
+          <div className="img-container col-6 col-md-6 col-lg-6 col-sm-6">
             <Carousel
               activeIndex={index}
               onSelect={handleSelect}
@@ -180,7 +180,7 @@ function AddingToCart(props) {
               </button>
             </div>
           </div>
-          <div className="card-body">
+          <div className="card-body col-6 col-md-6 col-lg-6 col-sm-6 ">
             <h5 className="card-title"> {product.Name}</h5> <br />
             <p className="card-text"> السعر: {product.Price}</p>
             <p className="card-text"> الربح: {product.Profit} </p>
@@ -190,7 +190,7 @@ function AddingToCart(props) {
               value={quantity}
               min="1"
               max="10"
-              className="form-control w-50"
+              className="form-control col-12"
               onChange={(e) => {
                 handleQuantity(e);
               }}
@@ -198,7 +198,7 @@ function AddingToCart(props) {
             <br /> <br />
             <p>السعر الاجمالي:{price} </p>
             <p> الربح الاجمالي:{profit} </p>
-            <button className="btn-success p-2  w-50 ">
+            <button className="btn-success p-2 col-12">
               <Link
                 to="/cart"
                 id="add-to-cart"
@@ -214,7 +214,7 @@ function AddingToCart(props) {
             </button>
             <br />
             <br />
-            <button className=" p-2 btn-yellow w-50 ">
+            <button className=" p-2 btn-yellow col-12 ">
               <Link
                 to="/favourites"
                 className="text-decoration-none color-white "

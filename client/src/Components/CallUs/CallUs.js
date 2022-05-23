@@ -16,15 +16,15 @@ function CallUs() {
       </div>
 
       <div className="d-flex flex-row ">
-        <Link to="https://www.facebook.com/groups/bee3official/?ref=share">
+        <a href="https://www.facebook.com/groups/bee3official/?ref=share">
           <FontAwesomeIcon icon={faFacebook} className="fa-2x m-l-5 " />
-        </Link>
-        <Link to="https://www.instagram.com/bee3now8/">
+        </a>
+        <a href="https://www.instagram.com/bee3now8/">
           <FontAwesomeIcon icon={faInstagram} className="fa-2x m-l-5" />
-        </Link>
-        <Link to="https://www.linkedin.com/in/bee3-now-9a948521a">
+        </a>
+        <a href="https://www.linkedin.com/in/bee3-now-9a948521a">
           <FontAwesomeIcon icon={faLinkedin} className="fa-2x m-l-5" />
-        </Link>
+        </a>
       </div>
 
       <div>

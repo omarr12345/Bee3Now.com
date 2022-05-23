@@ -9,8 +9,8 @@ function CartItem(props) {
   const { item: product } = props;
 
   return (
-    <div className="carddddd">
-      <div className="card-img-container">
+    <div className="card col-12 col-md-4 col-lg-3">
+      <div className="card-img">
         <img src={product.ImgUrl} alt="..." className="card-img-top" />
       </div>
       <div className="card-body">
@@ -27,7 +27,7 @@ function CartItem(props) {
         </p>
 
         <button
-          className="btn btn-danger"
+          className=" btn-danger col-12  font-bold p-2"
           onClick={() => props.removeFromCart(product)}
         >
           <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon> &nbsp; احذف من

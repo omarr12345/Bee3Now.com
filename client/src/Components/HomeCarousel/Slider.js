@@ -5,7 +5,7 @@ import "./edit.css";
 
 const data = [
   {
-    image: require("../../Assets/slider1.jpg"),
+    image: require("../../Assets/slider4.png"),
     caption: "Caption",
     description: "Description Here",
     id: 1,

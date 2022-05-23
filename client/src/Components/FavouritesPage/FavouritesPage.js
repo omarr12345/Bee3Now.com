@@ -17,13 +17,13 @@ class FavouritesPage extends React.Component {
   render() {
     return (
       <div className="container cart">
-        <div className="row mx-0 my-2">
+        <div className=" mx-0 my-2">
           <div id="empty"></div>
-          {this.props.items.map((item) => (
-            <div className=" card-w ">
-              <FavouriteItem item={item} />
-            </div>
-          ))}
+          <div className="row justify-content-between">
+            {this.props.items.map((item) => (
+              <FavouriteItem item={item} key={item.Id} />
+            ))}
+          </div>
         </div>
       </div>
     );

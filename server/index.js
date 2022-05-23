@@ -112,7 +112,6 @@ app.post("/api/register", jsonParser, (req, res) => {
   const userlastname = req.body.Lastname;
   const useremail = req.body.Email;
   const userpass = req.body.Pass;
-  const usergender = req.body.Gender;
 
   connection.query(
     "SELECT *FROM users WHERE Email='" + useremail + "'",
@@ -122,8 +121,8 @@ app.post("/api/register", jsonParser, (req, res) => {
       } else {
         if (result.length == 0) {
           connection.query(
-            "INSERT INTO users (Firstname,Lastname,Email,Password,Gender) VALUES (?,?,?,?,?)",
-            [userfirstname, userlastname, useremail, userpass, usergender],
+            "INSERT INTO users (Firstname,Lastname,Email,Password) VALUES (?,?,?,?)",
+            [userfirstname, userlastname, useremail, userpass],
 
             (error, resulttt) => {
               if (!!error) {

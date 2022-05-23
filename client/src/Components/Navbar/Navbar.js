@@ -43,7 +43,6 @@ function HomeNavbar() {
       })
       .then((response) => {
         setAllProducts(response.data);
-        console.log(allproducts);
       });
 
     var newArray = allproducts.filter(function (el) {
@@ -53,7 +52,7 @@ function HomeNavbar() {
     newArray.map((product) => {
       console.log(product.Name);
       document.getElementById("search-menu").innerHTML =
-        "<a class='d-flex flex-row justify-content-between search-output' style=' text-decoration:none;' href='/product/" +
+        "<a class='d-flex flex-row justify-content-between search-output' style=' text-decoration:none; color:black' href='/product/" +
         product.Id +
         "' '> <div  style='padding-top:30px'>" +
         product.Name +

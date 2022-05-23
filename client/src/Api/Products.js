@@ -4,8 +4,6 @@ export const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
 export const allProductsApi = `${process.env.REACT_APP_API_URL}/allproducts`;
-const clothesApi = `${process.env.REACT_APP_API_URL}/products/clothes`;
-const ordersApi = `${process.env.REACT_APP_API_URL}/orders`;
 
 const getAllData = async () => {
   return axiosInstance.get("/allproducts", {
@@ -36,14 +34,6 @@ const printOrders = async () => {
   return orders;
 };
 
-const getClothesProducts = fetch(clothesApi).then((response) =>
-  response.json()
-);
-const printClothesProducts = async () => {
-  const clothesProducts = await getClothesProducts;
-  return clothesProducts;
-};
-
 export function getProduct(Id) {
   const product = getAllData().then((response) =>
     response.data.find((item) => item.Id === Id)
@@ -58,10 +48,4 @@ function getProduct(id) {
 }
 */
 
-export {
-  getAllData,
-  printAllData,
-  printOrders,
-  printClothesProducts,
-  getOrders,
-};
+export { getAllData, printAllData, printOrders, getOrders };
