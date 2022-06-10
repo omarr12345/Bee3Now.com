@@ -11,13 +11,13 @@ const data = [
     id: 1,
   },
   {
-    image: require("../../Assets/slider2.jpg"),
+    image: require("../../Assets/slider3.jpg"),
     caption: "Caption",
     description: "Description Here",
     id: 2,
   },
   {
-    image: require("../../Assets/slider3.jpg"),
+    image: require("../../Assets/slider2.jpg"),
     caption: "Caption",
     description: "Description Here",
     id: 3,

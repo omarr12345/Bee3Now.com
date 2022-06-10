@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./edit.css";
 import axios from "axios";
+import FormData from "form-data";
 
 function AdminAddProduct() {
   const [name, setProductName] = useState("");
@@ -13,25 +14,23 @@ function AdminAddProduct() {
   const [forthImg, setProductForthImg] = useState("");
   const [fifthImg, setProductFifthImg] = useState("");
 
-  console.log(name, price, profit, firstImg, secImg);
+  useEffect(() => {
+    const form = document.getElementById("add-p-f");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
 
-  const addProduct = () => {
-    axios.post(process.env.REACT_APP_API_URL + "admin/addproduct", {
-      ProductName: name,
-      ProductPrice: price,
-      ProductProfit: profit,
-      ProductCategory: category,
-      FirstImgUrl: firstImg,
-      SecImgUrl: secImg,
-      ThirdImgUrl: thirdImg,
-      ForthImgUrl: forthImg,
-      FifthImgUrl: fifthImg,
+      axios.post(process.env.REACT_APP_API_URL + "/admin/addproduct", formData);
     });
-  };
+  }, []);
 
   return (
     <div className="AdminAddProduct">
-      <form className="add-product-form">
+      <form
+        className="add-product-form"
+        id="add-p-f"
+        encType="multipart/form-data"
+      >
         <input
           type="text"
           onChange={(e) => {
@@ -40,6 +39,7 @@ function AdminAddProduct() {
           name="productname"
           placeholder="Product name"
           className="form-text-input  form-control"
+          required
         />
         <br />
         <input
@@ -50,6 +50,7 @@ function AdminAddProduct() {
           name="productprice"
           placeholder="Product price"
           className="form-text-input form-control"
+          required
         />
         <br />
         <input
@@ -60,6 +61,7 @@ function AdminAddProduct() {
           name="productprofit"
           placeholder="Product profit"
           className="form-text-input form-control"
+          required
         />
         <br />
         <input
@@ -70,27 +72,25 @@ function AdminAddProduct() {
           name="productcategory"
           placeholder="Product Category"
           className="form-text-input form-control"
+          required
         />
         <br />
         <input
           type="file"
           className="form-control"
           id="first-img"
-          onChange={(e) => {
-            var lastValue = "../../Assets/" + e.target.value.substring(12);
-            setProductFirstImg(lastValue);
-          }}
+          name="uploaded_image_1"
+          accept=""
+          required
         />
         <br />
         <input
           type="file"
           className="form-control"
           id="sec-img"
-          onChange={(e) => {
-            var lastValue = "../../Assets/" + e.target.value.substring(12);
-
-            setProductSecImg(lastValue);
-          }}
+          name="uploaded_image_2"
+          accept=""
+          required
         />
         <br />
 
@@ -98,11 +98,9 @@ function AdminAddProduct() {
           type="file"
           className="form-control"
           id="third-img"
-          onChange={(e) => {
-            var lastValue = "../../Assets/" + e.target.value.substring(12);
-
-            setProductThirdImg(lastValue);
-          }}
+          name="uploaded_image_3"
+          accept=""
+          required
         />
         <br />
 
@@ -110,11 +108,9 @@ function AdminAddProduct() {
           type="file"
           className="form-control"
           id="sec-img"
-          onChange={(e) => {
-            var lastValue = "../../Assets/" + e.target.value.substring(12);
-
-            setProductForthImg(lastValue);
-          }}
+          name="uploaded_image_4"
+          accept=""
+          required
         />
 
         <br />
@@ -122,15 +118,13 @@ function AdminAddProduct() {
           type="file"
           className="form-control"
           id="sec-img"
-          onChange={(e) => {
-            var lastValue = "../../Assets/" + e.target.value.substring(12);
-
-            setProductFifthImg(lastValue);
-          }}
+          name="uploaded_image_5"
+          accept=""
+          required
         />
         <button
           className="btn btn-success adding-product-sub-button"
-          onClick={addProduct}
+          type="submit"
         >
           Submit
         </button>

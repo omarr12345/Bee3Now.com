@@ -32,32 +32,32 @@ function AddingToCart(props) {
 
   var data = [
     {
-      image: product.ImgUrl,
+      image: "../../Assets/" + product.first_img,
       caption: "Caption",
       description: "Description Here",
       id: 1,
     },
     {
-      image: product.SecImgUrl,
+      image: "../../Assets/" + product.second_img,
       caption: "Caption",
       description: "Description Here",
       id: 2,
     },
     {
-      image: product.ThirdImgUrl,
+      image: "../../Assets/" + product.third_img,
       caption: "Caption",
       description: "Description Here",
       id: 3,
     },
 
     {
-      image: product.ForthImgUrl,
+      image: "../../Assets/" + product.forth_img,
       caption: "Caption",
       description: "Description Here",
       id: 4,
     },
     {
-      image: product.FifthImgUrl,
+      image: "../../Assets/" + product.fifth_img,
       caption: "Caption",
       description: "Description Here",
       id: 5,
@@ -204,8 +204,8 @@ function AddingToCart(props) {
                 id="add-to-cart"
                 className="text-decoration-none  color-white  "
                 onClick={(e) => {
-                  e.preventDefault();
                   props.addToCart(product);
+                  window.location.href = "/cart";
                 }}
               >
                 <FontAwesomeIcon icon={faShoppingCart}> </FontAwesomeIcon>{" "}
@@ -220,7 +220,6 @@ function AddingToCart(props) {
                 className="text-decoration-none color-white "
                 id="add-to-favourites"
                 onClick={(e) => {
-                  e.preventDefault();
                   props.addToFavourites(product);
                 }}
               >

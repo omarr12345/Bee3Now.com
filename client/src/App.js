@@ -26,10 +26,7 @@ import AdminRoute from "./Pages/Admin/AdminRoute";
 import ProfitWithdrwal from "./Pages/ProfitWithdrwal/ProfitWithdrwal";
 import WithdrwalConfirmation from "./Pages/WithdrwalConfirmation/WithdrwalConfirmation";
 import ProductsPerCategory from "./Pages/ProductsPerCategory";
-<style>
-  @import
-  url('https://fonts.googleapis.com/css2?family=Almarai&family=Noto+Sans+Arabic:wght@100;200&display=swap');
-</style>;
+import RemoveProducts from "./Pages/Admin/RemoveProducts";
 
 function NoMatch() {
   let location = useLocation();
@@ -92,6 +89,7 @@ function App() {
         <Route exact path="/" element={<AdminRoute />}>
           <Route path="/admin/addproduct" element={<AdminAddProduct />} />
           <Route path="/admin/dashboard" element={<AdminDashBoard />} />
+          <Route path="/admin/products" element={<RemoveProducts />} />
         </Route>
 
         <Route path="*" element={<NoMatch />} />

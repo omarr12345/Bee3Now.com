@@ -20,10 +20,11 @@ import {
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import axios from "axios";
 import { useLocation } from "react-router";
+import { connect } from "react-redux";
 
-const AuthPages = ["/login", "/signup"];
+const AuthPages = ["/login", "/signup", "/forgotpassword"];
 
-function HomeNavbar() {
+function HomeNavbar(props) {
   const location = useLocation();
   const [searchKey, setSearchKey] = useState("");
   const isAuthPage = () => AuthPages.includes(location?.pathname);
@@ -102,6 +103,13 @@ function HomeNavbar() {
                   </Link>
 
                   <Link to="/cart" className="text-decoration-none nav-link">
+                    <span
+                      className="badge badge-danger"
+                      style={{ color: "red" }}
+                    >
+                      {props.totalQuantity}
+                    </span>
+
                     <FontAwesomeIcon icon={faShoppingCart} className="fa-2x " />
                   </Link>
 
@@ -109,6 +117,12 @@ function HomeNavbar() {
                     to="/favourites"
                     className="text-decoration-none nav-link"
                   >
+                    <span
+                      className="badge"
+                      style={{ color: "red", fontWeight: "bold" }}
+                    >
+                      {props.totalFavs}
+                    </span>
                     <FontAwesomeIcon icon={faHeart} className="fa-2x " />
                   </Link>
                 </div>
@@ -121,4 +135,11 @@ function HomeNavbar() {
   );
 }
 
-export default HomeNavbar;
+const mapStateToProps = (state) => {
+  return {
+    totalQuantity: state.cart.reduce((total, item) => total + item.quantity, 0),
+    totalFavs: state.favourites.length,
+  };
+};
+
+export default connect(mapStateToProps)(HomeNavbar);

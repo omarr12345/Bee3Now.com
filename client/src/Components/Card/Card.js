@@ -4,7 +4,6 @@ import "./edit.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 function Card(props) {
@@ -28,15 +27,18 @@ function Card(props) {
   }, []);
 
   return (
-    <div className="my-2 col-6 col-md-4 col-lg-3 px-1">
+    <div className="my-2 col-6 col-md-4 col-lg-3 px-1 ">
       <div
         className="card d-flex flex-column h-100 card-contains"
         key={product.Id}
       >
         <div className="card-img">
-          <img src={product.ImgUrl} className="card-img-top img-fluid" />
           <img
-            src={product.SecImgUrl}
+            src={"../../Assets/" + product.first_img}
+            className="card-img-top img-fluid"
+          />
+          <img
+            src={"../../Assets/" + product.second_img}
             className="second-card-img-top img-fluid"
           />
         </div>
