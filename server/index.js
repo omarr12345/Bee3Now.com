@@ -9,6 +9,19 @@ var bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const authenticate = require("./Middlewares/Authenticate");
 var nodemailer = require("nodemailer");
+var app = express();
+var jsonParser = bodyParser.json();
+app.use(cors());
+app.use(cookieParser());
+app.use(express.json());
+app.use(bodyParser.json());
+var fileupload = require("express-fileupload");
+app.use(fileupload());
+app.use(express.urlencoded({ extended: true }));
+var fs = require("fs");
+var busboy = require("connect-busboy");
+app.use(busboy());
+
 var mail = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -18,12 +31,6 @@ var mail = nodemailer.createTransport({
 });
 
 //
-var app = express();
-var jsonParser = bodyParser.json();
-//
-app.use(cors());
-app.use(cookieParser());
-app.use(express.json());
 
 // creating 24 hours from milliseconds
 const oneDay = 1000 * 60 * 60 * 24;
@@ -70,41 +77,98 @@ const verifyToken = () => {
 
 app.post(adminAddProductsApi, jsonParser, (req, res) => {
   console.log("inside addpr");
-  const productName = req.body.ProductName;
-  const productPrice = req.body.ProductPrice;
-  const productProfit = req.body.ProductProfit;
-  const productFirstImg = req.body.FirstImgUrl;
-  const productSecImg = req.body.SecImgUrl;
-  const productThirdImg = req.body.ThirdImgUrl;
-  const productForthImg = req.body.ForthImgUrl;
-  const productFifthImg = req.body.FifthImgUrl;
-  const productCategory = req.body.ProductCategory;
+  const productName = req.body.productname;
+  const productPrice = req.body.productprice;
+  const productProfit = req.body.productprofit;
+  const productFirstImg = req.files.uploaded_image_1;
+  const productSecImg = req.files.uploaded_image_2;
+  const productThirdImg = req.files.uploaded_image_3;
+  const productForthImg = req.files.uploaded_image_4;
+  const productFifthImg = req.files.uploaded_image_5;
+  const productCategory = req.body.productcategory;
 
-  connection.query(
-    "INSERT INTO product (Name,Price,Profit,Category,ImgUrl,SecImgUrl,ThirdImgUrl,ForthImgUrl,FifthImgUrl) VALUES (?,?,?,?,?,?,?,?,?)",
-    [
-      productName,
-      productPrice,
-      productProfit,
-      productCategory,
-      productFirstImg,
-      productSecImg,
-      productThirdImg,
-      productForthImg,
-      productFifthImg,
-    ],
-    (error, result) => {
-      if (error) {
-        throw error;
-      } else {
-        console.log("inserting new product is done ");
+  productFirstImg.mv(
+    "../client/public/Assets/" + productFirstImg.name,
+    (err) => {
+      if (err) {
+        throw err;
       }
+
+      productSecImg.mv(
+        "../client/public/Assets/" + productSecImg.name,
+        (err) => {
+          if (err) {
+            throw err;
+          }
+        }
+      );
+
+      productThirdImg.mv(
+        "../client/public/Assets/" + productThirdImg.name,
+        (err) => {
+          if (err) {
+            throw err;
+          }
+        }
+      );
+
+      productForthImg.mv(
+        "../client/public/Assets/" + productForthImg.name,
+        (err) => {
+          if (err) {
+            throw err;
+          }
+        }
+      );
+
+      productFifthImg.mv(
+        "../client/public/Assets/" + productFifthImg.name,
+        (err) => {
+          if (err) {
+            throw err;
+          }
+        }
+      );
+
+      connection.query(
+        "INSERT INTO product (Name,Price,Profit,Category,first_img,second_img,third_img,forth_img,fifth_img) VALUES (?,?,?,?,?,?,?,?,?)",
+        [
+          productName,
+          productPrice,
+          productProfit,
+          productCategory,
+          productFirstImg.name,
+          productSecImg.name,
+          productThirdImg.name,
+          productForthImg.name,
+          productFifthImg.name,
+        ],
+        (error, result) => {
+          if (error) {
+            throw error;
+          } else {
+            console.log("inserting new product is done ");
+          }
+        }
+      );
     }
   );
 });
 
 app.get(adminAddProductsApi, jsonParser, (req, res) => {
   res.json({ Message: "yeaaa true" });
+});
+
+app.post("/api/admin/deleteproduct", authenticate, (req, res) => {
+  const prodId = req.body.prod;
+  connection.query(
+    "DELETE FROM product WHERE Id=" + prodId + "",
+    (err, res) => {
+      if (err) {
+        console.log(err);
+      }
+    }
+  );
 });
 
 app.post("/api/register", jsonParser, (req, res) => {
@@ -397,7 +461,7 @@ app.post("/api/forgotpassword", async (req, res) => {
 
             html:
               '<p>Click <a href="' +
-              process.env.REACT_APP_API_URL +
+              process.env.REACT_APP_URLL +
               "/retypepassword/" +
               token +
               '">here</a> to reset your password</p>',
