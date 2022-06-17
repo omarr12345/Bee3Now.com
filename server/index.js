@@ -25,8 +25,8 @@ app.use(busboy());
 var mail = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "bee3now.1@gmail.com",
-    pass: "Bee3Now_1_2_3",
+    user: "bee3now.customerservice@gmail.com",
+    pass: "LOCA_DAR_3",
   },
 });
 
