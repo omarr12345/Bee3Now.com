@@ -88,14 +88,14 @@ app.post(adminAddProductsApi, jsonParser, (req, res) => {
   const productCategory = req.body.productcategory;
 
   productFirstImg.mv(
-    "../client/build/Assets/" + productFirstImg.name,
+    "../client/public/Assets/" + productFirstImg.name,
     (err) => {
       if (err) {
         throw err;
       }
 
       productSecImg.mv(
-        "../client/build/Assets/" + productSecImg.name,
+        "../client/public/Assets/" + productSecImg.name,
         (err) => {
           if (err) {
             throw err;
@@ -104,7 +104,7 @@ app.post(adminAddProductsApi, jsonParser, (req, res) => {
       );
 
       productThirdImg.mv(
-        "../client/build/Assets/" + productThirdImg.name,
+        "../client/public/Assets/" + productThirdImg.name,
         (err) => {
           if (err) {
             throw err;
@@ -113,7 +113,7 @@ app.post(adminAddProductsApi, jsonParser, (req, res) => {
       );
 
       productForthImg.mv(
-        "../client/build/Assets/" + productForthImg.name,
+        "../client/public/Assets/" + productForthImg.name,
         (err) => {
           if (err) {
             throw err;
@@ -122,7 +122,7 @@ app.post(adminAddProductsApi, jsonParser, (req, res) => {
       );
 
       productFifthImg.mv(
-        "../client/build/Assets/" + productFifthImg.name,
+        "../client/public/Assets/" + productFifthImg.name,
         (err) => {
           if (err) {
             throw err;
