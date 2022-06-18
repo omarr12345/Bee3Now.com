@@ -185,7 +185,7 @@ app.post("/api/register", jsonParser, (req, res) => {
       } else {
         if (result.length == 0) {
           connection.query(
-            "INSERT INTO users (Firstname,Lastname,Email,Password) VALUES (?,?,?,?)",
+            "INSERT INTO users (Firstname,Lastname,Email,Password,expectedprofit,Wallet) VALUES (?,?,?,?,0,0)",
             [userfirstname, userlastname, useremail, userpass],
 
             (error, resulttt) => {
@@ -529,41 +529,24 @@ app.patch("/api/emptywallet", authenticate, async (req, res) => {
 });
 
 app.patch("/api/expectedprofit", authenticate, async (req, res) => {
-  if (req.body.ExpectedProfit != null) {
-    connection.query(
-      "UPDATE users SET expectedprofit=expectedprofit+? WHERE Id=" +
-        req.body.user_id +
-        " ",
+  connection.query(
+    "UPDATE users SET expectedprofit=expectedprofit+? WHERE Id=" +
+      req.body.user_id +
+      " ",
 
-      [req.body.ExpectedProfit],
+    [req.body.ExpectedProfit],
 
-      (error, result) => {
-        if (error) {
-          throw error;
-        } else {
-          console.log(req.body.ExpectedProfit);
-          console.log(req.body.user_id);
-          console.log("inside expectedprofit patch");
-          res.json(result);
-        }
+    (error, result) => {
+      if (error) {
+        throw error;
+      } else {
+        console.log(req.body.ExpectedProfit);
+        console.log(req.body.user_id);
+        console.log("inside expectedprofit patch");
+        res.json(result);
       }
-    );
-  } else {
-    connection.query(
-      "UPDATE users SET expectedprofit=0 WHERE Id=" + req.body.user_id + " ",
-
-      (error, result) => {
-        if (error) {
-          throw error;
-        } else {
-          console.log(req.body.ExpectedProfit);
-          console.log(req.body.user_id);
-          console.log("inside expectedprofit patch");
-          res.json(result);
-        }
-      }
-    );
-  }
+    }
+  );
 });
 
 app.patch("/api/decreaseexpectedprofit", authenticate, async (req, res) => {
