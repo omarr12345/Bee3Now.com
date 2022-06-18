@@ -24,7 +24,7 @@ app.use(busboy());
 
 var mail = nodemailer.createTransport({
    
-            service:'gmail',
+            service:'hostinger',
             
             auth: {
                user: 'noreply@bee3now.com',
