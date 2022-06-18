@@ -23,11 +23,16 @@ var busboy = require("connect-busboy");
 app.use(busboy());
 
 var mail = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "bee3now.customerservice@gmail.com",
-    pass: "LOCA_DAR_3",
-  },
+   host: 'smtp.mail.yahoo.com',
+            port: 465,
+            service:'yahoo',
+            secure: false,
+            auth: {
+               user: 'bee3now.cs@yahoo.com',
+               pass: 'n_g_u_z_m'
+            },
+            debug: false,
+            logger: true 
 });
 
 //
