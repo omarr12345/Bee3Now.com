@@ -24,7 +24,7 @@ app.use(busboy());
 
 var mail = nodemailer.createTransport({
   host: "smtp.titan.email",
-port: 25,
+port: 465,
 secure: true,
     auth: {
        user: 'noreply@bee3now.com',
@@ -457,7 +457,7 @@ app.post("/api/forgotpassword", async (req, res) => {
           console.log("true");
           const token = createToken(rows[0].Id);
           var mailOptions = {
-            from: "bee3now.1@gmail.com",
+            from: "noreply@bee3now.com",
             to: "" + req.body.Email + "",
             subject: "Reset Password",
             text: "Click Link to Change Password",
@@ -641,7 +641,7 @@ app.post("/api/profitwithdrawalemail", authenticate, (req, res) => {
         process.env.REACT_APP_API_URL + "/withdrawalconfirmation/" + token + "";
       res.json(result[0]);
       var mailOptions = {
-        from: "bee3now.1@gmail.com",
+        from: "noreply@bee3now.com",
         to: "" + result[0].Email + "",
         subject: "سحب الارباح",
 
