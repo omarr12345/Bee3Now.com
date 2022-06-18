@@ -24,7 +24,7 @@ app.use(busboy());
 
 var mail = nodemailer.createTransport({
   host: "smtp.titan.email",
-port: 465,
+port: 587,
 secure: true,
     auth: {
        user: 'noreply@bee3now.com',
