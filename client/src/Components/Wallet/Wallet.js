@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 
 function Wallet() {
   const [user, getUser] = useState([]);
-  useEffect(async () => {
-    await axios
+  useEffect(() => {
+    axios
       .get(process.env.REACT_APP_API_URL + "/users", {
         headers: { Authorization: localStorage.getItem("access_token") },
       })
       .then((response) => {
         getUser(response.data);
+        console.log(user[0]);
       });
   }, []);
 

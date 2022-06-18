@@ -232,6 +232,7 @@ app.get("/api/users", authenticate, (req, res) => {
         console.log(error);
       }
 
+      console.log(result);
       res.json(result);
     }
   );
