@@ -23,9 +23,9 @@ var busboy = require("connect-busboy");
 app.use(busboy());
 
 var mail = nodemailer.createTransport({
-   
-    host: 'smtp.hostinger.io',
-    port: 2525,
+  host: "smtp.titan.email",
+port: 465,
+secure: true,
     auth: {
        user: 'noreply@bee3now.com',
        pass: 'LOCA_DAR_3'
