@@ -24,14 +24,12 @@ app.use(busboy());
 
 var mail = nodemailer.createTransport({
    
-            service:'hostinger',
-            
-            auth: {
-               user: 'noreply@bee3now.com',
-               pass: 'LOCA_DAR_3'
-            },
-            debug: false,
-            logger: true 
+    host: 'smtp.mailtrap.io',
+    port: 2525,
+    auth: {
+       user: 'noreply@bee3now.com',
+       pass: 'LOCA_DAR_3'
+    }
 });
 
 //
