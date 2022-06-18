@@ -24,7 +24,7 @@ app.use(busboy());
 
 var mail = nodemailer.createTransport({
    
-    host: 'smtp.mailtrap.io',
+    host: 'smtp.hostinger.io',
     port: 2525,
     auth: {
        user: 'noreply@bee3now.com',
