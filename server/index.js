@@ -187,8 +187,8 @@ app.post("/api/register", jsonParser, (req, res) => {
       } else {
         if (result.length == 0) {
           connection.query(
-            "INSERT INTO users (Firstname,Lastname,Email,Password,expectedprofit,Wallet) VALUES (?,?,?,?,?,?)",
-            [userfirstname, userlastname, useremail, userpass,0,0],
+            "INSERT INTO users (Firstname,Lastname,Email,Password,expectedprofit,Wallet) VALUES (?,?,?,?,0,0)",
+            [userfirstname, userlastname, useremail, userpass],
 
             (error, resulttt) => {
               if (!!error) {
