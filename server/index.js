@@ -550,11 +550,11 @@ app.patch("/api/expectedprofit", authenticate, async (req, res) => {
 
 app.patch("/api/decreaseexpectedprofit", authenticate, async (req, res) => {
   connection.query(
-    "UPDATE users SET expectedprofit=expectedprofit-?,Wallet=Wallet+? WHERE Id=" +
+    "UPDATE users SET expectedprofit=expectedprofit-? WHERE Id=" +
       req.body.user_id +
       " ",
 
-    [req.body.ExpectedProfit,req.body.ExpectedProfit],
+    [req.body.ExpectedProfit],
 
     (error, result) => {
       if (error) {
