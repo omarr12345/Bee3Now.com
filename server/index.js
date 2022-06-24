@@ -720,7 +720,7 @@ app.get("/api/products/:category", (req, res) => {
 
 app.get(walletsAndBagsApi, (req, res) => {
   connection.query(
-    "SELECT * FROM product WHERE Category='wallets' ||Category='bags '",
+    "SELECT * FROM product WHERE Category='wallets'||Category='bags' ",
     (error, result) => {
       if (error) {
         console.log(error);
