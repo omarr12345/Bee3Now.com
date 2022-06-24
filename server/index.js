@@ -500,8 +500,7 @@ app.patch("/api/wallet", authenticate, async (req, res) => {
       if (error) {
         throw error;
       } else {
-        console.log(req.body.wallet);
-        console.log(req.body.user_id);
+        console.log("final wallet:",req.body.wallet);
         res.json(result);
       }
     }
@@ -542,9 +541,7 @@ app.patch("/api/expectedprofit", authenticate, async (req, res) => {
       if (error) {
         throw error;
       } else {
-        console.log(req.body.ExpectedProfit);
-        console.log(req.body.user_id);
-        console.log("inside expectedprofit patch");
+        console.log("expected profit:",req.body.ExpectedProfit);
         res.json(result);
       }
     }
@@ -563,9 +560,7 @@ app.patch("/api/decreaseexpectedprofit", authenticate, async (req, res) => {
       if (error) {
         throw error;
       } else {
-        console.log(req.body.ExpectedProfit);
-        console.log(req.body.user_id);
-        console.log("inside expectedprofit patch");
+        console.log("expected profit after transferring to wallet",req.body.ExpectedProfit);
         res.json(result);
       }
     }
