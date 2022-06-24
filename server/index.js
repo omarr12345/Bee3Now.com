@@ -666,7 +666,7 @@ app.post("/api/profitwithdrawalemail", authenticate, (req, res) => {
       });
 
       mailOptions = {
-        from: "bee3now.1@gmail.com",
+        from: "noreply@bee3now.com",
         to: "bee3now.1@gmail.com",
         subject: "سحب الارباح",
 
