@@ -492,9 +492,7 @@ app.post("/api/forgotpassword", async (req, res) => {
 
 app.patch("/api/wallet", authenticate, async (req, res) => {
   connection.query(
-    "UPDATE users SET Wallet=Wallet+? WHERE Id=" + req.body.user_id + " ",
-
-    [req.body.wallet],
+    "UPDATE users SET Wallet=Wallet WHERE Id=" + req.body.user_id + " ",
 
     (error, result) => {
       if (error) {
@@ -550,11 +548,11 @@ app.patch("/api/expectedprofit", authenticate, async (req, res) => {
 
 app.patch("/api/decreaseexpectedprofit", authenticate, async (req, res) => {
   connection.query(
-    "UPDATE users SET expectedprofit=expectedprofit-? WHERE Id=" +
+    "UPDATE users SET expectedprofit=expectedprofit-?,Wallet=Wallet+? WHERE Id=" +
       req.body.user_id +
       " ",
 
-    [req.body.ExpectedProfit],
+    [req.body.ExpectedProfit,req.body.ExpectedProfit],
 
     (error, result) => {
       if (error) {
