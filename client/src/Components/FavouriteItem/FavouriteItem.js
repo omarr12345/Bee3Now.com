@@ -17,7 +17,7 @@ function FavouriteItem(props) {
   return (
     <div className="col-12 col-md-4 col-lg-3 card " key={product.Id}>
       <div className="card-img">
-        <img src={product.ImgUrl} alt="اسم المنتج" className="card-img-top" />
+        <img src={"../../Assets/" + product.first_img} alt="اسم المنتج" className="card-img-top" />
       </div>
       <div className="card-body">
         <h5 className="card-title">الاسم:{product.Name}</h5>
