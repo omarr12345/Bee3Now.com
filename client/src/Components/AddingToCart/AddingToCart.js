@@ -1,5 +1,4 @@
 import React from "react";
-import apiProduct from "../../Api/Products";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
@@ -9,9 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { getProduct } from "../../Api/Products";
 import "./edit.css";
-import { Slide } from "react-slideshow-image";
 import Carousel from "react-bootstrap/Carousel";
-import $ from "jquery";
 // export for others scripts to use
 
 function AddingToCart(props) {

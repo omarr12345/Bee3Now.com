@@ -24,12 +24,12 @@ app.use(busboy());
 
 var mail = nodemailer.createTransport({
   host: "smtp.titan.email",
-port: 465,
-secure: true,
-    auth: {
-       user: 'noreply@bee3now.com',
-       pass: 'LOCA_DAR_3'
-    }
+  port: 465,
+  secure: true,
+  auth: {
+    user: "noreply@bee3now.com",
+    pass: "LOCA_DAR_3",
+  },
 });
 
 //
@@ -498,7 +498,7 @@ app.patch("/api/wallet", authenticate, async (req, res) => {
       if (error) {
         throw error;
       } else {
-        console.log("final wallet:",req.body.wallet);
+        console.log("final wallet:", req.body.wallet);
         res.json(result);
       }
     }
@@ -539,7 +539,7 @@ app.patch("/api/expectedprofit", authenticate, async (req, res) => {
       if (error) {
         throw error;
       } else {
-        console.log("expected profit:",req.body.ExpectedProfit);
+        console.log("expected profit:", req.body.ExpectedProfit);
         res.json(result);
       }
     }
@@ -552,13 +552,16 @@ app.patch("/api/decreaseexpectedprofit", authenticate, async (req, res) => {
       req.body.user_id +
       " ",
 
-    [req.body.ExpectedProfit,req.body.ExpectedProfit],
+    [req.body.ExpectedProfit, req.body.ExpectedProfit],
 
     (error, result) => {
       if (error) {
         throw error;
       } else {
-        console.log("expected profit after transferring to wallet",req.body.ExpectedProfit);
+        console.log(
+          "expected profit after transferring to wallet",
+          req.body.ExpectedProfit
+        );
         res.json(result);
       }
     }
