@@ -1,4 +1,5 @@
 import "./App.scss";
+import "bootstrap/dist/css/bootstrap.css";
 import HomeNavbar from "./Components/Navbar/Navbar";
 import ProfilePage from "./Components/ProfilePage/ProfilePage";
 import { Route, Routes, useLocation } from "react-router-dom";
