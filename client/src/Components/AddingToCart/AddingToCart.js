@@ -135,31 +135,31 @@ function AddingToCart(props) {
             </Carousel>
             <div className="text-center">
               <a
-                href={product.ImgUrl}
+                href={product.first_img}
                 download="product1.png"
                 id="download_file1"
               ></a>
 
               <a
-                href={product.SecImgUrl}
+                href={product.second_img}
                 download="product2.png"
                 id="download_file2"
               ></a>
 
               <a
-                href={product.ThirdImgUrl}
+                href={product.third_img}
                 download="product3.png"
                 id="download_file3"
               ></a>
 
               <a
-                href={product.ForthImgUrl}
+                href={product.forth_img}
                 download="product4.jpg"
                 id="download_file4"
               ></a>
 
               <a
-                href={product.FifthImgUrl}
+                href={product.fifth_img}
                 download="product5.png"
                 id="download_file5"
               ></a>

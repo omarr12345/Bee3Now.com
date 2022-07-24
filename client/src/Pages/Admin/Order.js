@@ -176,7 +176,7 @@ function Order(props) {
           return (
             <div className="d-flex flex-row border-solid-1-black w-long ">
               <div className="w-50">
-                <img src={x.ImgUrl} className="h-100 w-50 " />
+                <img src={x.first_img} className="h-100 w-50 " />
               </div>
 
               <div className="w-50">

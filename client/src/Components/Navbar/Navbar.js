@@ -60,7 +60,7 @@ function HomeNavbar(props) {
         "</div> <div  style='padding-top:30px'> السعر:" +
         product.Price +
         " جنيه</div><div class='h-100'><img src=" +
-        product.ImgUrl +
+        product.first_img +
         " class='search-imgs img-fluid'></div>     </a>";
     });
   };
