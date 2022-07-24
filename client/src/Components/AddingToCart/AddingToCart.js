@@ -29,32 +29,32 @@ function AddingToCart(props) {
 
   var data = [
     {
-      image: "../../Assets/" + product.first_img,
+      image: process.env.REACT_APP_URL + "/static/" + product.first_img,
       caption: "Caption",
       description: "Description Here",
       id: 1,
     },
     {
-      image: "../../Assets/" + product.second_img,
+      image: process.env.REACT_APP_URL + "/static/" + product.second_img,
       caption: "Caption",
       description: "Description Here",
       id: 2,
     },
     {
-      image: "../../Assets/" + product.third_img,
+      image: process.env.REACT_APP_URL + "/static/" + product.third_img,
       caption: "Caption",
       description: "Description Here",
       id: 3,
     },
 
     {
-      image: "../../Assets/" + product.forth_img,
+      image: process.env.REACT_APP_URL + "/static/" + product.forth_img,
       caption: "Caption",
       description: "Description Here",
       id: 4,
     },
     {
-      image: "../../Assets/" + product.fifth_img,
+      image: process.env.REACT_APP_URL + "/static/" + product.fifth_img,
       caption: "Caption",
       description: "Description Here",
       id: 5,

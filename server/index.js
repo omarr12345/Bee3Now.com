@@ -4,6 +4,7 @@ const { DB_CONFIG } = require("./Config");
 var cookieParser = require("cookie-parser");
 var express = require("express");
 var mysql = require("mysql");
+var path = require("path");
 const cors = require("cors");
 var bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
@@ -21,6 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 var fs = require("fs");
 var busboy = require("connect-busboy");
 app.use(busboy());
+
+app.use("/static", express.static(path.join(__dirname, "Assets")));
 
 var mail = nodemailer.createTransport({
   host: "smtp.titan.email",
@@ -89,72 +92,57 @@ app.post(adminAddProductsApi, jsonParser, (req, res) => {
   const productFifthImg = req.files.uploaded_image_5;
   const productCategory = req.body.productcategory;
 
-  productFirstImg.mv(
-    "../client/build/Assets/" + productFirstImg.name,
-    (err) => {
+  productFirstImg.mv("./Assets/" + productFirstImg.name, (err) => {
+    if (err) {
+      throw err;
+    }
+
+    productSecImg.mv("./Assets/" + productSecImg.name, (err) => {
       if (err) {
         throw err;
       }
+    });
 
-      productSecImg.mv(
-        "../client/build/Assets/" + productSecImg.name,
-        (err) => {
-          if (err) {
-            throw err;
-          }
-        }
-      );
+    productThirdImg.mv("./Assets/" + productThirdImg.name, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
 
-      productThirdImg.mv(
-        "../client/build/Assets/" + productThirdImg.name,
-        (err) => {
-          if (err) {
-            throw err;
-          }
-        }
-      );
+    productForthImg.mv("./Assets/" + productForthImg.name, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
 
-      productForthImg.mv(
-        "../client/build/Assets/" + productForthImg.name,
-        (err) => {
-          if (err) {
-            throw err;
-          }
-        }
-      );
+    productFifthImg.mv("./Assets/" + productFifthImg.name, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
 
-      productFifthImg.mv(
-        "../client/build/Assets/" + productFifthImg.name,
-        (err) => {
-          if (err) {
-            throw err;
-          }
+    connection.query(
+      "INSERT INTO product (Name,Price,Profit,Category,first_img,second_img,third_img,forth_img,fifth_img) VALUES (?,?,?,?,?,?,?,?,?)",
+      [
+        productName,
+        productPrice,
+        productProfit,
+        productCategory,
+        productFirstImg.name,
+        productSecImg.name,
+        productThirdImg.name,
+        productForthImg.name,
+        productFifthImg.name,
+      ],
+      (error, result) => {
+        if (error) {
+          throw error;
+        } else {
+          console.log("inserting new product is done ");
         }
-      );
-
-      connection.query(
-        "INSERT INTO product (Name,Price,Profit,Category,first_img,second_img,third_img,forth_img,fifth_img) VALUES (?,?,?,?,?,?,?,?,?)",
-        [
-          productName,
-          productPrice,
-          productProfit,
-          productCategory,
-          productFirstImg.name,
-          productSecImg.name,
-          productThirdImg.name,
-          productForthImg.name,
-          productFifthImg.name,
-        ],
-        (error, result) => {
-          if (error) {
-            throw error;
-          } else {
-            console.log("inserting new product is done ");
-          }
-        }
-      );
-    }
-  );
+      }
+    );
+  });
 });
 
 app.get(adminAddProductsApi, jsonParser, (req, res) => {

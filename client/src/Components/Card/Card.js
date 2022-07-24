@@ -34,12 +34,14 @@ function Card(props) {
       >
         <div className="card-img">
           <img
-            src={"../../Assets/" + product.first_img}
+            src={process.env.REACT_APP_URL + "/static/" + product.first_img}
             className="card-img-top img-fluid"
+            alt=""
           />
           <img
-            src={"../../Assets/" + product.second_img}
+            src={process.env.REACT_APP_URL + "/static/" + product.second_img}
             className="second-card-img-top img-fluid"
+            alt=""
           />
         </div>
 

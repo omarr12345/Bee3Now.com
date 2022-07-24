@@ -12,7 +12,7 @@ function CartItem(props) {
     <div className="card col-12 col-md-4 col-lg-3">
       <div className="card-img">
         <img
-          src={"../../Assets/" + product.first_img}
+          src={process.env.REACT_APP_URL + "/static/" + product.first_img}
           alt="..."
           className="card-img-top"
         />
