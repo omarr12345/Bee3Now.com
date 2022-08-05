@@ -19,7 +19,7 @@ const printAllData = async () => {
 
 const getOrders = async () => {
   return axiosInstance.get("/orders", {
-    headers: { Authorization: localStorage.getItem("access_token") },
+    headers: { Authorization: localStorage.getItem("admin_access_token") },
   });
 };
 
