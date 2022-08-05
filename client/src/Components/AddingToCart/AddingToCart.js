@@ -115,7 +115,7 @@ function AddingToCart(props) {
     <div className="adding-to-cart">
       <div className="container ">
         <div className="row ">
-          <div className="img-container col-6 col-md-6 col-lg-6 col-sm-6">
+          <div className="img-container col-12 col-md-6 col-lg-6 col-sm-12">
             <Carousel
               activeIndex={index}
               onSelect={handleSelect}
@@ -165,7 +165,7 @@ function AddingToCart(props) {
               ></a>
               <br />
 
-              <button className="btn-success p-4 w-75">
+              <button className="btn-success p-4">
                 <a
                   onClick={downloadAll}
                   id="downloadAll"
@@ -176,9 +176,22 @@ function AddingToCart(props) {
                 </a>
               </button>
             </div>
+
+            <h3>تفاصيل المنتج:</h3>
+            <p
+              style={{
+                height: "200px",
+                overflow: "auto",
+              }}
+            >
+              {product.description}
+            </p>
           </div>
-          <div className="card-body col-6 col-md-6 col-lg-6 col-sm-6 ">
-            <h5 className="card-title"> {product.Name}</h5> <br />
+          <div
+            className="card-body col-12 col-md-6 col-lg-6 col-sm-12 text-center"
+            style={{ paddingTop: "100px !important" }}
+          >
+            <h1 className="card-title"> {product.Name}</h1> <br />
             <p className="card-text"> السعر: {product.Price}</p>
             <p className="card-text"> الربح: {product.Profit} </p>
             <input
@@ -187,15 +200,16 @@ function AddingToCart(props) {
               value={quantity}
               min="1"
               max="10"
-              className="form-control col-12"
+              className="form-control w-50"
               onChange={(e) => {
                 handleQuantity(e);
               }}
+              style={{ marginLeft: "auto", marginRight: "auto" }}
             />
             <br /> <br />
             <p>السعر الاجمالي:{price} </p>
             <p> الربح الاجمالي:{profit} </p>
-            <button className="btn-success p-2 col-12">
+            <button className="btn-success p-2 col-md-6 col-6 col-sm-12">
               <Link
                 to="/cart"
                 id="add-to-cart"
@@ -211,7 +225,7 @@ function AddingToCart(props) {
             </button>
             <br />
             <br />
-            <button className=" p-2 btn-yellow col-12 ">
+            <button className=" p-2 btn-yellow col-md-6 col-6 col-sm-12 ">
               <Link
                 to="/favourites"
                 className="text-decoration-none color-white "

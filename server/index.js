@@ -80,9 +80,10 @@ const verifyToken = () => {
 
 //register
 
-app.post(adminAddProductsApi, authenticate, jsonParser, (req, res) => {
+app.post(adminAddProductsApi, jsonParser, (req, res) => {
   console.log("inside addpr");
   const productName = req.body.productname;
+  const productDesc = req.body.productdesc;
   const productPrice = req.body.productprice;
   const productProfit = req.body.productprofit;
   const productFirstImg = req.files.uploaded_image_1;
@@ -122,9 +123,10 @@ app.post(adminAddProductsApi, authenticate, jsonParser, (req, res) => {
     });
 
     connection.query(
-      "INSERT INTO product (Name,Price,Profit,Category,first_img,second_img,third_img,forth_img,fifth_img) VALUES (?,?,?,?,?,?,?,?,?)",
+      "INSERT INTO product(Name,description,Price,Profit,Category,first_img,second_img,third_img,forth_img,fifth_img) VALUES (?,?,?,?,?,?,?,?,?,?)",
       [
         productName,
+        productDesc,
         productPrice,
         productProfit,
         productCategory,

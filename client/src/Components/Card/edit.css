@@ -123,11 +123,15 @@
 }
 
 .add-to-cart-btn {
-  border-radius: 50px;
+  border-radius: 10px;
   background-color: rgb(251, 212, 109);
   transition: all 0.2s;
   transition: all 0.2s;
   text-align: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .add-to-cart-btn:hover {
@@ -173,9 +177,17 @@
   }
 
   .add-to-cart-btn {
-    border-radius: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
   }
   .card-con p {
+    font-size: 12px;
+  }
+
+  a {
     font-size: 12px;
   }
 }

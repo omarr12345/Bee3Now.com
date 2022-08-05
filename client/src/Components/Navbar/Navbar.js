@@ -22,7 +22,15 @@ import axios from "axios";
 import { useLocation } from "react-router";
 import { connect } from "react-redux";
 
-const AuthPages = ["/login", "/signup", "/forgotpassword"];
+const AuthPages = [
+  "/login",
+  "/signup",
+  "/forgotpassword",
+  "/admin/dashboard",
+  "/admin/addproduct",
+  "/admin/products",
+  "/AdminLogin",
+];
 
 function HomeNavbar(props) {
   const location = useLocation();

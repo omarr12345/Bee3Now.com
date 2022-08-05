@@ -12,7 +12,6 @@
 
 .img-fluid {
   display: block;
-  width: 80%;
   max-width: 100%;
   height: auto;
   max-height: 100%;
@@ -42,7 +41,7 @@
 
 @media (max-width: 425px) {
   .carouselItem {
-    height: 150px;
+    height: 250px;
     width: 100%;
   }
 }

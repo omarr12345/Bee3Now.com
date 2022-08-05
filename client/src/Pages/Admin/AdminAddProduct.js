@@ -8,11 +8,6 @@ function AdminAddProduct() {
   const [price, setProductPrice] = useState("");
   const [profit, setProductProfit] = useState("");
   const [category, setProductCategory] = useState("");
-  const [firstImg, setProductFirstImg] = useState("");
-  const [secImg, setProductSecImg] = useState("");
-  const [thirdImg, setProductThirdImg] = useState("");
-  const [forthImg, setProductForthImg] = useState("");
-  const [fifthImg, setProductFifthImg] = useState("");
 
   useEffect(() => {
     const form = document.getElementById("add-p-f");
@@ -20,16 +15,7 @@ function AdminAddProduct() {
       e.preventDefault();
       const formData = new FormData(form);
 
-      axios.post(
-        process.env.REACT_APP_API_URL + "/admin/addproduct",
-        formData,
-        {
-          "Content-type": "application/json",
-          headers: {
-            Authorization: localStorage.getItem("access_token"),
-          },
-        }
-      );
+      axios.post(process.env.REACT_APP_API_URL + "/admin/addproduct", formData);
     });
   }, []);
 
@@ -47,6 +33,14 @@ function AdminAddProduct() {
           }}
           name="productname"
           placeholder="Product name"
+          className="form-text-input  form-control"
+          required
+        />
+        <br />
+        <textarea
+          type="text"
+          name="productdesc"
+          placeholder="Product description"
           className="form-text-input  form-control"
           required
         />
@@ -102,7 +96,6 @@ function AdminAddProduct() {
           required
         />
         <br />
-
         <input
           type="file"
           className="form-control"
@@ -112,7 +105,6 @@ function AdminAddProduct() {
           required
         />
         <br />
-
         <input
           type="file"
           className="form-control"
@@ -121,7 +113,6 @@ function AdminAddProduct() {
           accept=""
           required
         />
-
         <br />
         <input
           type="file"
