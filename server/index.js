@@ -80,7 +80,7 @@ const verifyToken = () => {
 
 //register
 
-app.post(adminAddProductsApi, jsonParser, (req, res) => {
+app.post(adminAddProductsApi, authenticate, jsonParser, (req, res) => {
   console.log("inside addpr");
   const productName = req.body.productname;
   const productPrice = req.body.productprice;
@@ -144,10 +144,6 @@ app.post(adminAddProductsApi, jsonParser, (req, res) => {
       }
     );
   });
-});
-
-app.get(adminAddProductsApi, jsonParser, (req, res) => {
-  res.json({ Message: "yeaaa true" });
 });
 
 app.post("/api/admin/deleteproduct", authenticate, (req, res) => {
