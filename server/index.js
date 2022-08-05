@@ -148,7 +148,7 @@ app.post(adminAddProductsApi, jsonParser, (req, res) => {
   });
 });
 
-app.post("/api/admin/deleteproduct", authenticate, (req, res) => {
+app.post("/api/admin/deleteproduct", jsonParser, (req, res) => {
   const prodId = req.body.prod;
   connection.query(
     "DELETE FROM product WHERE Id=" + prodId + "",
@@ -344,7 +344,7 @@ app.post("/api/adminlogin", jsonParser, (req, res) => {
   );
 });
 
-app.post("/api/orders", authenticate, async (req, res) => {
+app.post("/api/orders", jsonParser, async (req, res) => {
   const customerName = await req.body.CustomerName,
     customerAddress = await req.body.CustomerAddress,
     customerNum = await req.body.CustomerNumber,

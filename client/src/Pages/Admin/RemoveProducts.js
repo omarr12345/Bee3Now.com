@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "../../Components/Card/Card";
 import ProductList from "../../Components/ProductList";
 function RemoveProducts() {
   const [products, setProducts] = useState([]);
@@ -9,7 +8,7 @@ function RemoveProducts() {
       .get(process.env.REACT_APP_API_URL + "/allproducts", {
         "Content-type": "application/json",
         headers: {
-          Authorization: localStorage.getItem("access_token"),
+          Authorization: localStorage.getItem("admin_access_token"),
         },
       })
       .then((response) => {

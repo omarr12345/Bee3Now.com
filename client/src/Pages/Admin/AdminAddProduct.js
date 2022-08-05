@@ -15,7 +15,16 @@ function AdminAddProduct() {
       e.preventDefault();
       const formData = new FormData(form);
 
-      axios.post(process.env.REACT_APP_API_URL + "/admin/addproduct", formData);
+      axios.post(
+        process.env.REACT_APP_API_URL + "/admin/addproduct",
+        formData,
+        {
+          "Content-type": "application/json",
+          headers: {
+            Authorization: localStorage.getItem("admin_access_token"),
+          },
+        }
+      );
     });
   }, []);
 
