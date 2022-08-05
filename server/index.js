@@ -136,6 +136,7 @@ app.post(adminAddProductsApi, jsonParser, (req, res) => {
       ],
       (error, result) => {
         if (error) {
+          console.log(error);
           throw error;
         } else {
           console.log("inserting new product is done ");
