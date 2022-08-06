@@ -622,7 +622,10 @@ app.post("/api/profitwithdrawalemail", authenticate, (req, res) => {
 
       const token = createToken(result[0].Id);
       var href =
-        process.env.REACT_APP_URLL + "/withdrawalconfirmation/" + token + "";
+        process.env.REACT_APP_API_URLL +
+        "/withdrawalconfirmation/" +
+        token +
+        "";
       res.json(result[0]);
       var mailOptions = {
         from: "noreply@bee3now.com",
