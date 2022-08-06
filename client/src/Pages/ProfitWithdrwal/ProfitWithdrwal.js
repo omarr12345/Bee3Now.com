@@ -19,8 +19,6 @@ function ProfitWithdrwal() {
   };
 
   const handleSubmit = (e) => {
-    console.log(way, transferNumber);
-
     axios
       .post(
         process.env.REACT_APP_API_URL + "/profitwithdrawalemail",
