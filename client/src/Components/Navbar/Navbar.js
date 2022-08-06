@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./edit.css";
 import {
   Navbar,
@@ -34,7 +34,6 @@ const AuthPages = [
 
 function HomeNavbar(props) {
   const location = useLocation();
-  const [searchKey, setSearchKey] = useState("");
   const isAuthPage = () => AuthPages.includes(location?.pathname);
 
   const [allproducts, setAllProducts] = useState([]);
@@ -68,10 +67,13 @@ function HomeNavbar(props) {
         "</div> <div  style='padding-top:30px'> السعر:" +
         product.Price +
         " جنيه</div><div class='h-100'><img src=" +
+        process.env.REACT_APP_URL +
+        "/static/" +
         product.first_img +
         " class='search-imgs img-fluid'></div>     </a>";
     });
   };
+
   return (
     <div>
       <Navbar className="nav" expand="lg">

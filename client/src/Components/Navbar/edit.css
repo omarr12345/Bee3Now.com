@@ -40,7 +40,7 @@
   width: 600px;
   padding-top: 22px;
   padding-bottom: 5px;
-  height: 70px;
+  height: auto;
   position: relative;
 }
 
@@ -114,7 +114,6 @@ body {
 
 .search-output {
   height: 100px;
-  border: solid 1px rgb(224, 224, 224);
   direction: ltr !important;
   cursor: pointer;
   padding: 10px;

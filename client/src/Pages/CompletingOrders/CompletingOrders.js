@@ -249,6 +249,7 @@ function CompletingOrders() {
             NumericOnly(e);
             setNum(e.target.value);
           }}
+          maxLength="11"
           required
         />
         <br />
@@ -262,6 +263,7 @@ function CompletingOrders() {
             NumericOnly(e);
             setSecNum(e.target.value);
           }}
+          maxLength="11"
           required
         />
         <br />

@@ -344,7 +344,7 @@ app.post("/api/adminlogin", jsonParser, (req, res) => {
   );
 });
 
-app.post("/api/orders", jsonParser, async (req, res) => {
+app.post("/api/orders", jsonParser, authenticate, async (req, res) => {
   const customerName = await req.body.CustomerName,
     customerAddress = await req.body.CustomerAddress,
     customerNum = await req.body.CustomerNumber,
@@ -356,6 +356,7 @@ app.post("/api/orders", jsonParser, async (req, res) => {
     shippingPrice = await req.body.ShippingPrice,
     governerate = await req.body.Governerate,
     user_id = await req.current_user_id;
+  console.log(user_id);
 
   // decode access token
   // get user_id
