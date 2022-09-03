@@ -3,8 +3,6 @@ import "./edit.css";
 import { useState } from "react";
 import axios from "axios";
 function CompletingOrders() {
-  var userMobile = document.getElementById("usermobile");
-  var userMobile_2 = document.getElementById("usermobile2");
   const [name, setName] = useState("");
   const [num, setNum] = useState("");
   const [secNum, setSecNum] = useState("");
@@ -12,8 +10,92 @@ function CompletingOrders() {
   const [fbPage, setFbPage] = useState("");
   const [fbPageLink, setFbPageLink] = useState("");
   const [notes, setNotes] = useState("");
-  const [shippingPrice, setShippingPrice] = useState("");
+  const [shippingPrice, setShippingPrice] = useState(35);
   const [governerate, setGovernerate] = useState("");
+
+  let userName = document.getElementById("user_name");
+  var userMobile = document.getElementById("usermobile");
+  let adderss = document.getElementById("useraddress");
+
+  const validateName = (input) => {
+    console.log(input);
+    if (userName.value.length < 3) {
+      userName.style.border = "solid 1px red";
+      userName.classList.add(".isinvalid");
+      return false;
+    }
+    userName.style.border = "solid 1px green";
+    return true;
+  };
+
+  const validateMobNum = () => {
+    if (userMobile.value.length < 11) {
+      userMobile.style.border = "solid 1px red";
+      return false;
+    }
+    userMobile.style.border = "solid 1px green";
+    return true;
+  };
+
+  const validateUserAddress = () => {
+    if (adderss.value.length < 1) {
+      adderss.style.border = "solid 1px red";
+      return false;
+    }
+    adderss.style.border = "solid 1px green";
+    return true;
+  };
+
+  const handleSubmit = (e) => {
+    if (validateName() && validateMobNum() && validateUserAddress()) {
+
+      e.preventDefault()
+      axios
+        .post(
+          process.env.REACT_APP_API_URL + "/orders",
+          {
+            CustomerName: name,
+            CustomerAddress: address,
+            CustomerNumber: num,
+            CustomerSecNum: secNum,
+            FbPage: fbPage,
+            FbPageLink: fbPageLink,
+            Notes: notes,
+            ShippingPrice: shippingPrice,
+            Governerate: governerate,
+            Request: localStorage.getItem("cart"),
+          },
+          {
+            headers: { Authorization: localStorage.getItem("access_token") },
+          }
+        )
+        .then((response) => {
+          window.location.assign("/profile/requests")
+
+        });
+    }
+  };
+  var shippingPr;
+  const handleCheck = (input) => {
+    switch (input) {
+      case "الجيزه":
+        shippingPr = 35;
+        setShippingPrice(shippingPr);
+
+        break;
+
+      case "القاهره":
+        shippingPr = 35;
+        setShippingPrice(shippingPr);
+
+        break;
+
+      // eslint-disable-next-line no-fallthrough
+      default:
+        shippingPr = 35;
+        setShippingPrice(shippingPr);
+    }
+  };
 
   const NumericOnly = (e) => {
     //angka only
@@ -23,216 +105,20 @@ function CompletingOrders() {
     else e.target.value = preval.substring(0, preval.length - 1);
   };
 
-  const handleSubmit = () => {
-    console.log("inside axios.post");
-    axios
-      .post(
-        process.env.REACT_APP_API_URL + "/orders",
-        {
-          CustomerName: name,
-          CustomerAddress: address,
-          CustomerNumber: num,
-          CustomerSecNum: secNum,
-          FbPage: fbPage,
-          FbPageLink: fbPageLink,
-          Notes: notes,
-          ShippingPrice: shippingPrice,
-          Governerate: governerate,
-          Request: localStorage.getItem("cart"),
-        },
-        {
-          headers: { Authorization: localStorage.getItem("access_token") },
-        }
-      )
-      .then((response) => {
-        console.log(response);
-        console.log(num, secNum);
-      });
-  };
-
-  var shippingPr;
-  const handleCheck = (input) => {
-    switch (input) {
-      case "القاهره":
-        console.log("yeah");
-        shippingPr = 15;
-        setShippingPrice(shippingPr);
-
-        break;
-      case "اسكندريه":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "كفر الشيخ":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "الدقهليه":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "الشرقيه":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "الساحل الشمالي":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "المحله":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "الغربيه":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "الاقصر":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "البحيره":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "العين السخنه":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "بني سويف":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "سوهاج":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "الفيوم":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "المنوفيه ":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "العاشر من رمضان":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "البحر الاحمر":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "الاسماعيليه":
-        console.log("yeah");
-        shippingPr = 30;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "الحيزه ":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "طنطا ":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case " أسيوط":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "مرسي مطروح":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "دمياط":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "السويس":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "وادي النطرون":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "المنيا":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "قنا":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-
-      case "اسوان ":
-        console.log("yeah");
-        shippingPr = 35;
-        setShippingPrice(shippingPr);
-        break;
-    }
-  };
-
   return (
-    <div className="completing-orders container ">
+    <div className="completing-orders container  ">
       <h3 className="text-center outline">ادخل بيانات الشحن من فضلك</h3>
       <br />
-      <form onSubmit={handleSubmit} className="form-style">
+      <form onSubmit={handleSubmit} className="form-style ">
         <p htmlFor="username">اسم المشتري</p>
         <input
           type="text"
           name="username"
+          id="user_name"
           className="form-control w-100"
+          onBlur={(e) => {
+            validateName(e.target);
+          }}
           onChange={(e) => {
             setName(e.target.value);
           }}
@@ -249,7 +135,11 @@ function CompletingOrders() {
             NumericOnly(e);
             setNum(e.target.value);
           }}
+          onBlur={() => {
+            validateMobNum(userMobile);
+          }}
           maxLength="11"
+          minLength="11"
           required
         />
         <br />
@@ -264,7 +154,7 @@ function CompletingOrders() {
             setSecNum(e.target.value);
           }}
           maxLength="11"
-          required
+          minLength="11"
         />
         <br />
 
@@ -276,6 +166,9 @@ function CompletingOrders() {
           className="form-control w-100"
           onChange={(e) => {
             setAddress(e.target.value);
+          }}
+          onBlur={() => {
+            validateUserAddress(adderss);
           }}
           required
         />
@@ -290,31 +183,10 @@ function CompletingOrders() {
             setGovernerate(e.target.value);
             handleCheck(e.target.value);
           }}
+          id="governerate"
         >
           <option>القاهره </option>
-          <option>اسكندريه</option>
-          <option>مرسي مطروح</option>
-          <option>السويس</option>
-          <option>اسماعيليه</option>
-          <option>بورسعيد</option>
-          <option>الاقصر</option>
-          <option>الدقهليه</option>
-          <option>الشرقيه</option>
-          <option>المنوفيه</option>
-          <option>القليوبيه</option>
-          <option>البحيره</option>
-          <option>الغربيه</option>
-          <option>دمياط</option>
-          <option>كفر الشيخ</option>
-          <option>الفيوم</option>
-          <option>بني سويف</option>
-          <option>العين السخنه</option>
-          <option>وادي النطرون</option>
-          <option>المنيا</option>
-          <option>أسيوط</option>
-          <option>سوهاج</option>
-          <option>قنا</option>
-          <option>البحر الاحمر</option>
+          <option>الجيزه </option>
         </select>
 
         <br />

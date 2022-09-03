@@ -19,8 +19,6 @@
 @media (max-width: 320px) {
   .form-style {
     width: 100% !important;
-    border: solid 1px darkgray;
-    border-radius: 10px;
   }
 
   .form-control {

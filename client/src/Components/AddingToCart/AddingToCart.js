@@ -68,7 +68,6 @@ function AddingToCart(props) {
   };
 
   function handleQuantity(e) {
-    console.log(e.target.value);
     if (e.target.value < 0) {
       return 0;
     } else {
@@ -97,7 +96,6 @@ function AddingToCart(props) {
       setTimeout(() => {
         setProduct({ ...product, quantity });
         setLoading(false);
-        console.log(product);
       }, 2000);
     });
   }, []);

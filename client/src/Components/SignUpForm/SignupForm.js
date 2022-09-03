@@ -7,15 +7,11 @@ function SignupForm() {
   const [userpassReg, setPassword] = useState("");
   const [userfirstnameReg, setFirstname] = useState("");
   const [userlastnameReg, setLastname] = useState("");
-  const [usergenderReg, setGender] = useState("");
-  const [usertypeReg, setType] = useState("");
-
   let fname = document.getElementById("first_name");
   let lname = document.getElementById("last_name");
   let password = document.getElementById("password");
   let rePassword = document.getElementById("re_password");
   let email = document.getElementById("email");
-  let submitButton = document.getElementById("submit_button");
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   const validateFirstName = (input) => {
@@ -73,8 +69,6 @@ function SignupForm() {
           Lastname: userlastnameReg,
           Email: useremailReg,
           Pass: userpassReg,
-          Type: usertypeReg,
-          Gender: usergenderReg,
           withCredentials: true,
         },
         {

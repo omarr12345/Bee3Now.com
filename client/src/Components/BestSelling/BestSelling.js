@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./edit.css";
 
 import Card from "../Card/Card";
-import { connect } from "react-redux";
-import { useDispatch } from "react-redux";
 import axios from "axios";
 
 function BestSelling(props) {
-  const dispatch = useDispatch();
   const [clothes, setClothes] = useState([]);
   const [watches, setWatches] = useState([]);
   const [houseProducts, setHouseProducts] = useState([]);
@@ -34,7 +31,6 @@ function BestSelling(props) {
       })
       .then((response) => {
         setClothes(response.data);
-        console.log(response.data);
       });
 
     axios
@@ -43,7 +39,6 @@ function BestSelling(props) {
       })
       .then((response) => {
         setWatches(response.data);
-        console.log(response.data);
       });
 
     axios
@@ -52,7 +47,6 @@ function BestSelling(props) {
       })
       .then((response) => {
         setHouseProducts(response.data);
-        console.log(response.data);
       });
 
     axios
@@ -61,7 +55,6 @@ function BestSelling(props) {
       })
       .then((response) => {
         setBeautyProducts(response.data);
-        console.log(response.data);
       });
 
     axios
@@ -70,7 +63,6 @@ function BestSelling(props) {
       })
       .then((response) => {
         setElectricProducts(response.data);
-        console.log(response.data);
       });
 
     axios
@@ -79,7 +71,6 @@ function BestSelling(props) {
       })
       .then((response) => {
         setShavingProducts(response.data);
-        console.log(response.data);
       });
 
     axios
@@ -88,7 +79,6 @@ function BestSelling(props) {
       })
       .then((response) => {
         setWallets(response.data);
-        console.log(response.data);
       });
 
     axios
@@ -97,7 +87,6 @@ function BestSelling(props) {
       })
       .then((response) => {
         setBags(response.data);
-        console.log(response.data);
       });
 
     axios
@@ -106,7 +95,6 @@ function BestSelling(props) {
       })
       .then((response) => {
         setMobileAccessories(response.data);
-        console.log(response.data);
       });
   }, []);
 
